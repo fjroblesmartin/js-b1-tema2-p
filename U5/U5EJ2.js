@@ -15,21 +15,7 @@
   
   En base a la funcionalidad solicitada deberéis decidir qué métodos definís como Métodos de Instancia y cuáles definís como Métodos de Clase.
   Finalmente, crea almenos 3 objetos de la clase Car y haz 3 llamadas a estos nuevos métodos.
-  
-  -- CATALÀ
-  -- EXERCICI 2.5.2 ENUNCIAT:
-	Se'ns demana, basant-nos en tot allò definit a l'exercici 2.3.1, ampliar la definició de la classe "Car" que representarà els diferents cotxes que es venen
-	en un concessionari, de manera que puguem cobrir les noves funcionalitats següents:
-	- Es pretén implementar una nova funcionalitat (compareAntiguaty) on, donats dos vehicles, se'ns torni com a resultat el vehicle més antic
-	(en base a la propietat year).
-	- També cal saber, donat un Array que contingui una sèrie de vehicles, quin és el de major cilindrada (especificada a la propietat displacement)
-	amb un nou mètode anomenat maxDisplacement.
-	- Així mateix, ens demanen, per tal de poder comparar la potència dels cotxes clàssics del concessionari amb les potències dels actuals cotxes elèctrics
-	un mètode (al qual anomenarem cv2kw) que ens retorni la potència en kW (KiloWatts) a partir de la potència en CV (Cavalls) del vehicle 
-  (Nota: l'equivalència és 1 CV = 0,736 kW)
-  
-	En base a la funcionalitat sol·licitada haureu de decidir quins mètodes definiu com a Mètodes d'Instància i quins definiu com a Mètodes de Classe.
-	Finalment, crea almenys 3 objectes de la classe Car i fes 3 crides a aquests nous mètodes.
+    
 */
 //Escribe aquí tu solución / escriviu aquí la vostra solució:
 
