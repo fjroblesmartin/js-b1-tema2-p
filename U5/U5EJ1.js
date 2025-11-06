@@ -10,16 +10,7 @@
 	2. Obtener por pantalla el nombre de la estrella de un planeta usando el método de instancia nameOftheStar.
 	3. De los 8 planetas definidos en constantes, obtener en un nuevo Array los que poseen anillos usando el método de clase planetsWithRings.
 	4. Mostrar por pantalla la distancia entre dos planetas usando el método de clase distanceBetweenPlanets.
-      	
-  -- CATALÀ
-  -- EXERCICI 2.5.1 ENUNCIAT:
-	Donada la classe Planet (que defineix planetes del Sistema Solar) i que es mostra més avall amb propietats i mètodes d'instància i
-	de classe ja definits ens demanen el següent:
-	
-	1. Definir en 8 constants (què anomenarem myPlanet1, myPlanet2, ..., myPlanet8) els 8 objectes Planet del sistema solar que es defineixen a l'exercici 1 de la Unitat 1 del tema 1, usant aquesta nova classe.
-	2. Definir en una constant anomenada [starName] el nom de l'estrella d'un planeta usant el mètode d'instància nameOftheStar.
-	3. Dels 8 planetes definits en constants, obtenir en un nou Array que emmagatzenarem a una constant anomenada [PWR] els que tenen anells usant el mètode de classe planetsWithRings.
-	4. Definir en una constant anomenada [venusToSarturn] la distància entre dos planetes usant el mètode de classe distanceBetweenPlanets.
+   
 */
 class Planet {
     constructor(p_name, p_distanceToSun, p_hasRings, p_diameter){
@@ -50,8 +41,22 @@ class Planet {
 
 //Escribe aquí tu solución / escriviu aquí la vostra solució:
 
+const myPlanet1 = new Planet("Mercury",58344000,false,4878);
+const myPlanet2 = new Planet("Venus",107712000,false,12100);
+const myPlanet3 = new Planet("Earth",149600000,false,12756);
+const myPlanet4 = new Planet("Mars",227392000,false,6787);
+const myPlanet5 = new Planet("Jupiter",777920000,true,142984);
+const myPlanet6 = new Planet("Saturn",1427184000,true,120536);
+const myPlanet7 = new Planet("Uranus",2600000000,true,51108);
+const myPlanet8 = new Planet("Neptune",4300000000,true,49538);
 
+const starName = myPlanet1.nameOftheStar();
 
+let planets = [myPlanet1,myPlanet2,myPlanet3,myPlanet4,myPlanet5,myPlanet6,myPlanet7,myPlanet8];
+
+const PWR = Planet.planetsWithRings(planets);
+
+const venusToSarturn= Planet.distanceBetweenPlanets(myPlanet2, myPlanet6);
 /**
  * TEST
  * The purpose of this code is purely for TESTING PURPOSES, 
