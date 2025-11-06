@@ -19,25 +19,27 @@
     devolveremos undefined, pero si sí lo es, devolveremos el perímetro del mismo (recuerda que el perímetro de un triángulo rectángulo es la suma de la base
     más la altura más la hipotenusa).  
     	
-  -- CATALÀ
- -- EXERCICI 2.3.2 ENUNCIAT:
-  Se'ns demana ampliar la definició de la classe "Triangle" que representarà els diferents triangles d'una app de geometria (vista ja a l'exercici 2.2.2 de
-  aquest mateix Tema 2), de la manera següent:
-  -> D'una banda, respecte de les seves propietats, en tenim definides dues fins ara: "base" (on s'emmagatzema el valor de la base del triangle) i
-  "height" (on emmagatzemem el valor de l'alçada del triangle). Ara ens demanen definir una nova propietat, "rightTriangle": on emmagatzemarem si aquest triangle 
-  és un triangle rectangle o no mitjançant un valor booleà.
-  -> També ens demanen implementar un getter "areaTriangle" que torni el valor calculat de l'àrea del triangle (recordeu que la fórmula del càlcul de l'àrea
-  d'un triangle és (base x alçada) / 2.
-  -> D'altra banda, ens demanen implementar dos getters específics per als triangles que són rectangles:
-    - El primer es dirà "rightHypotenuse" i ens tornarà, en cas que el triangle sigui rectangle (cosa que podrem comprovar amb el valor definit a la
-    nova propietat "rightTriangle"), el valor calculat de la hipotenusa del nostre triangle rectangle (recordeu que la fórmula del càlcul de la hipotenusa d'un
-    triangle rectangle, donades la base i l'alçada és c = √(b²+a²), l'heu calculada a l'exercici 1 de la Unitat 3 del Tema 1), en el cas que el
-    triangle no sigui rectangle aquest getter retornarà "undefined".
-    - El segon getter l'anomenarem "rightPerimeter" i serà per calcular el perímetre d'un triangle rectangle: és a dir, si el triangle no és rectangle
-    tornarem undefined, però si sí que ho és, tornarem el perímetre del mateix (recorda que el perímetre d'un triangle rectangle és la suma de la base
-    més l'alçada més la hipotenusa).
+ 
 */
 //Escribe aquí tu solución / escriviu aquí la vostra solució:
+class Triangle{
+  constructor(base, height, rightTriangle){
+    this.base=base;
+    this.height=height;
+    this.rightTriangle=rightTriangle;
+  }
+  get areaTriangle(){
+      return this.base*this.height/2;
+    }
+  get rightHypotenuse(){
+      if (this.rightTriangle){return Math.sqrt(this.base*this.base+this.height*this.height);}
+      else{return undefined;}
+    }
+  get rightPerimeter(){
+      if (this.rightTriangle){return this.base+this.height+this.rightHypotenuse;}
+      else{return undefined;}
+  }
+}
 
 
 
