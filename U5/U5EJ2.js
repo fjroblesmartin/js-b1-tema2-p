@@ -19,11 +19,38 @@
 */
 //Escribe aquí tu solución / escriviu aquí la vostra solució:
 
+class Car {
+  constructor(brand, model, displacement, horsePower, year) {
+    this.brand = brand;
+    this.model = model;
+    this.displacement = displacement;
+    this.horsePower = horsePower;
+    this.year = year;
+  }
+  cv2kw(){
+	return this.horsePower*0.736;
+  }
+  static compareAntiguaty(coche1,coche2){
+	if(coche1.year>coche2.year){return coche2;}
+	else{return coche1;}
+  }
+  static maxDisplacement(listaCoches){
+    let cocheB=listaCoches[0];
+	for(let i=1;i<this.length.listaCoches;i++){
+		if(cocheB.displacement<listaCoches[i].displacement){
+			cocheB=listaCoches[i]
+		}
+	} 
+	return cocheB;
+  }
+}
+const myCar1 = new Car ("Ford", "Mustang Boss 429", 7000, 375, 1969);
+const myCar2 = new Car ("BMW", "520d", 1980, 136, 2002);
+const myCar3 = new Car ("Mercedes-Benz", "280 SLC", 2746, 136, 1979);
 
-
-
-
-
+console.log(Car.compareAntiguaty(myCar1,myCar3));
+console.log(myCar3.cv2kw());
+console.log(Car.maxDisplacement([myCar1,myCar2,myCar3]));
 /**
  * TEST
  * The purpose of this code is purely for TESTING PURPOSES, 
