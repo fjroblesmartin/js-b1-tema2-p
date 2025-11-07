@@ -19,25 +19,51 @@
 	En base a la funcionalidad solicitada deberéis decidir qué métodos definís como Métodos de Instancia y cuáles definís como Métodos de Clase.
 	Finalmente, crea al menos 3 objetos de la clase Triangle y haz 3 llamadas a estos nuevos métodos.
       	
-  -- CATALÀ
-  -- EXERCICI 2.5.3 ENUNCIAT:
-	Se'ns demana, basant-nos en tot allò definit a l'exercici 2.3.2, ampliar la definició de la classe "Triangle" que representarà els diferents triangles
-	d'una app de geometria , de manera que puguem cobrir les noves funcionalitats següents:
-	- Sabem que, donats dos triangles rectangles, si els enfrontem unint-los pels seus angles rectes formaran un polígon, de manera que el perímetre
-	exterior d'aquest nou polígon serà la suma del perímetre de tots dos rectangles més el valor absolut de la resta de les seves altures, amb això necessitem,
-	donats dos triangles rectangles, obtenir el perímetre exterior del polígon que conformen definint un nou mètode anomenat rightTriangleUnion.
-	- També cal saber, donat un Polígon format per una sèrie de triangles (que ens arribaran en un Array), obtenir quina és l'àrea d'aquest polígon
-	amb un nou mètode anomenat areaPoligon. (Nota: l'àrea de superfície d'un polígon format per triangles és la suma de les àrees d'aquests triangles).
-	- Així mateix, ens demanen, per tal de poder saber si un triangle és equilàter o no, un mètode (al que anomenarem isEquilateral) que accedint a les seves propietats
-	base i height, ens torni si el triangle és equilàter; NOTA: una propietat dels triangles equilàters és que la seva alçada sempre és igual a la base per l'arrel
-	quadrada de tres dividit entre dos (height = (base*√3) / 2 ). Per comprovar-ho, un exemple de triangle equilàter seria un amb una base de 10 i una alçada de 10*√3/2.
-	com aquest per exemple:
-	const myEquilateral = new Triangle(10, 10*Math.sqrt(3)/2, false);
-	  
-	En base a la funcionalitat sol·licitada haureu de decidir quins mètodes definiu com a Mètodes d'Instància i quins definiu com a Mètodes de Classe.
-	Finalment, crea almenys 3 objectes de la classe Triangle i fes 3 trucades a aquests nous mètodes.
+  
 */
 //Escribe aquí tu solución / escriviu aquí la vostra solució:
+class Triangle{
+  constructor(base, height, rightTriangle){
+    this.base=base;
+    this.height=height;
+    this.rightTriangle=rightTriangle;
+  }
+  get areaTriangle(){
+      return this.base*this.height/2;
+    }
+  get rightHypotenuse(){
+      if (this.rightTriangle){return Math.sqrt(this.base*this.base+this.height*this.height);}
+      else{return undefined;}
+    }
+  get rightPerimeter(){
+      if (this.rightTriangle){return this.base+this.height+this.rightHypotenuse;}
+      else{return undefined;}
+  }
+  isEquilateral(){
+    const requiredHeight = (this.base * Math.sqrt(3)) / 2;
+    const tolerance = 0.0001;
+    return Math.abs(this.height - requiredHeight) < tolerance;
+  }
+ static rightTriangleUnion(tri1, tri2){
+    const perimeter1 = tri1.rightPerimeter;
+    const perimeter2 = tri2.rightPerimeter;
+    const heightDifference = Math.abs(tri1.height - tri2.height);
+    return perimeter1 + perimeter2 + heightDifference;
+  }
+ static areaPoligon(listaT){
+    if (!Array.isArray(listaT)) {
+        return 0;
+    }
+    return listaT.reduce((totalArea, triangle) => {
+        return totalArea + triangle.areaTriangle;
+    }, 0);
+  }  
+}
+
+const triA = new Triangle(3, 4, true); 
+const triB = new Triangle(6, 8, true); 
+const triC = new Triangle(10, 10 * Math.sqrt(3) / 2, false); 
+
 
 
 
