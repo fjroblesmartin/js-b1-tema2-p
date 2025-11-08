@@ -9,22 +9,24 @@
 	- Obtener un nuevo Array en otra constante (a la que llamaremos equilateralsTriangles) con todos triángulos equiláteros del Array anterior (myTriangles).
 	- Pasar este nuevo Array a un texto plano JSON en una nueva constante denominada newTrianglesJSON.
 	
-  
-  -- CATALÀ
-  -- EXERCICI 2.6.3 ENUNCIAT:
-	Donat  el valor de la constant anomenada myJSON, un text pla en format JSON que conté la descripció d'un Array amb tres objectes de la classe Triangle,
-	vista a l'exercici 2.5.3. Se'ns demana
-	- Definir en una constant anomenada myTriangles un Array d'objectes Triangle a partir d'aquest text.
-	- Obtenir un nou Array en una altra constant (que anomenarem equilateralsTriangles) amb tots triangles equilàters de l'Array anterior (myTriangles).
-	- Passar aquest nou Array a un text pla JSON en una nova constant anomenada newTrianglesJSON.
 */
 
 const myJSON = '[{"base":10,"height":5,"rightTriangle":true},{"base":10,"height":8.660254037844386,"rightTriangle":false},{"base":15,"height":7,"rightTriangle":true}]';
 
 //Escribe aquí tu solución / escriviu aquí la vostra solució:
 
+const myTriangles = JSON.parse(myJSON);
+console.log("1. Array de triángulos (myTriangles):", myTriangles);
 
+const equilateralsTriangles = myTriangles.filter(triangle => {
+    const expectedHeight = (triangle.base * Math.sqrt(3)) / 2;
+    const isEquilateral = Math.abs(triangle.height - expectedHeight) < 0.0001;
+    return isEquilateral;
+});
+console.log("\n2. Triángulos equiláteros (equilateralsTriangles):", equilateralsTriangles);
 
+const newTrianglesJSON = JSON.stringify(equilateralsTriangles);
+console.log("\n3. Texto JSON resultante (newTrianglesJSON):", newTrianglesJSON);
 
 
 /**
