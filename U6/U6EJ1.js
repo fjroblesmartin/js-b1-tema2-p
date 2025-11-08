@@ -5,11 +5,7 @@
   -- EJERCICIO 2.6.1 ENUNCIADO: 
 	- Define, en el valor de una constante denominada myJSON, un texto plano en formato JSON que contenga la descripción de un Array con al menos tres objetos Planet definidos mediante la clase dada. 
 	- Después convierte este texto a un Array de objetos Planet e introduce en un nuevo Array denominado planetsBTE todos los que resulten de pasar este Array al el método de clase biggerThanEarth.
-  
-  -- CATALÀ
-  -- EXERCICI 2.6.1 ENUNCIAT:
-	- Defineix, en el valor d'una constant anomenada myJSON, un text pla en format JSON que contingui la descripció d'un Array amb almenys tres objectes Planet definits mitjançant la classe donada.
-	- Després converteix aquest text a un Array d'objectes Planet i introdueix en un nou Array anomenat planetsBTE tots els que resultin de passar aquest Array al mètode de classe biggerThanEarth.
+   
 */
 
 class Planet {
@@ -39,8 +35,37 @@ class Planet {
 
 //Escribe aquí tu solución / escriviu aquí la vostra solució:
 
+const myJSON = `[
+    {
+        "name": "Jupiter",
+        "distanceToSun": 778000000,
+        "hasRings": true,
+        "diameter": 142984
+    },
+    {
+        "name": "Earth",
+        "distanceToSun": 149600000,
+        "hasRings": false,
+        "diameter": 12756
+    },
+    {
+        "name": "Mars",
+        "distanceToSun": 227900000,
+        "hasRings": false,
+        "diameter": 6779
+    }
+]`;
 
+// --- 2. Convert JSON to an Array of objects ---
 
+const planetsArray = JSON.parse(myJSON);
+
+// Muestra el Array de objetos resultante de la conversión (opcional)
+console.log("Array de objetos después de JSON.parse():", planetsArray);
+
+const planetsBTE = Planet.biggerThanEarth(planetsArray);
+
+console.log("\nPlanetas más grandes que la Tierra (planetsBTE):", planetsBTE);
 
 /**
  * TEST
