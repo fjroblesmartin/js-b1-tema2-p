@@ -9,16 +9,6 @@
   En myCar1 tenemos que almacenar un antiguo coche del año 1969, de la marca Ford, del modelo "Mustang Boss 429", de 7000 cc de cilindrada y con una potencia de 375 CV
   En myCar2 guardaremos un BMW del año 2002, el modelo "520d", de 1980 cc de cilindrada y con una potencia de 136 CV
   Finalmente, en myCar3, almacenaremos un modelo "280 SLC" de la marca Mercedes-Benz del año 1979 con una cilidrada de 2746 cc y 136 CV de potencia  
-  
-  	
-  -- CATALÀ --
-  EXERCICI 2.2.1 ENUNCIAT:
-  Donada la definició de la classe "Car" que representarà els cotxes d'un concessionari, i on s'estableixen les propietats brand (marca), model (model),
-  displacement (cilindrada en cc), horsePower (potència en CV), year (any del vehicle).
-  Se'ns demana crear tres nous objectes d'aquest tipus que definirem respectivament a les constants (ja donades) myCar1, myCar2 i myCar3.
-  A myCar1 hem d'emmagatzemar un antic cotxe de l'any 1969, de la marca Ford, del model "Mustang Boss 429", de 7000 cc de cilindrada i amb una potència de 375 CV
-  A myCar2 desarem un BMW de l'any 2002, el model "520d", de 1980 cc de cilindrada i amb una potència de 136 CV
-  Finalment, a myCar3, emmagatzemarem un model "280 SLC" de la marca Mercedes-Benz de l'any 1979 amb una cilidrada de 2746 cc i 136 CV de potència
 */
 class Car {
   constructor(brand, model, displacement, horsePower, year) {
@@ -35,8 +25,6 @@ class Car {
 const myCar1 = new Car("Ford","Mustang Boss 429",7000,375,1969);
 const myCar2 = new Car("BMW","520d",1980,136,2002);
 const myCar3 = new Car("Mercedes-Benz","280 SLC",2746,136,1979);
-
-
 
 /**
  * TEST
