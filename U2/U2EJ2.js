@@ -8,13 +8,7 @@
   "base" (en donde se almacenará el valor de la base del triángulo) y "height" (en donde almacenaremos el valor de la altura del triángulo).
   Define esta clase que implemente un constructor capaz de instanciar objetos de este tipo. 
 	
-  -- CATALÀ --
-  EXERCICI 2.2.2 ENUNCIAT:
-  Ens demanen crear una aplicació que treballi amb triangles, per la qual cosa, per representar aquests objectes de manera més còmoda i estructurada
-  se'ns demana que definim la classe que representarà aquests objectes i que l'anomenem "Triangle". Aquests objectes, en principi tindran dues propietats:
-  "base" (on s'emmagatzemarà el valor de la base del triangle) i "height" (on emmagatzemarem el valor de l'alçada del triangle).
-  Defineix aquesta classe que implementi un constructor capaç d'instanciar d'aquest tipus d'objectes.
-*/
+ */
 
 //Escribe aquí tu solución / escriviu aquí la vostra solució:
 
